@@ -6,6 +6,10 @@ from evaluate_results import evaluate_results
 from generate_report import generate_report
 
 
+# ============================================================
+# Arguments
+# ============================================================
+
 def parse_arguments():
 
     parser = argparse.ArgumentParser(
@@ -20,18 +24,37 @@ def parse_arguments():
     )
 
     parser.add_argument(
+        "--type",
+        choices=[
+            "positive",
+            "negative",
+            "all",
+        ],
+        default="positive",
+        help=(
+            "Type of tests to generate: "
+            "positive, negative, or all. "
+            "Default: positive."
+        ),
+    )
+
+    parser.add_argument(
         "--strategy",
         nargs="+",
         default=None,
         help=(
-            "Generation strategies. Example: "
-            "--strategy direct conversational short "
+            "Generation strategies. Examples: "
+            "--strategy direct conversational "
             "or --strategy all"
         ),
     )
 
     return parser.parse_args()
 
+
+# ============================================================
+# Main
+# ============================================================
 
 def main():
 
@@ -43,8 +66,14 @@ def main():
 
     if args.count is not None:
         print(
-            f"\nRequested test cases: {args.count}"
+            f"\nRequested test cases: "
+            f"{args.count}"
         )
+
+    print(
+        f"Requested test type: "
+        f"{args.type.upper()}"
+    )
 
     if args.strategy:
         print(
@@ -60,11 +89,14 @@ def main():
     # ========================================================
 
     print()
-    print("[STAGE 1] TEST CASE GENERATION")
+    print(
+        "[STAGE 1] TEST CASE GENERATION"
+    )
     print("-" * 60)
 
     generate_testcases(
         count=args.count,
+        test_type=args.type,
         strategies=args.strategy,
     )
 
@@ -73,7 +105,9 @@ def main():
     # ========================================================
 
     print()
-    print("[STAGE 2] CHATBOT EXECUTION")
+    print(
+        "[STAGE 2] CHATBOT EXECUTION"
+    )
     print("-" * 60)
 
     execute_testcases()
@@ -83,7 +117,9 @@ def main():
     # ========================================================
 
     print()
-    print("[STAGE 3] RESPONSE EVALUATION")
+    print(
+        "[STAGE 3] RESPONSE EVALUATION"
+    )
     print("-" * 60)
 
     evaluate_results()
@@ -93,18 +129,22 @@ def main():
     # ========================================================
 
     print()
-    print("[STAGE 4] REPORT GENERATION")
+    print(
+        "[STAGE 4] REPORT GENERATION"
+    )
     print("-" * 60)
 
     generate_report()
 
     # ========================================================
-    # COMPLETE
+    # Complete
     # ========================================================
 
     print()
     print("=" * 60)
-    print("AUTOMATION COMPLETED")
+    print(
+        "AUTOMATION COMPLETED"
+    )
     print("=" * 60)
 
 
