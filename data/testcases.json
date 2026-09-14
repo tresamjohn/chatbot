@@ -1,0 +1,52 @@
+[
+  {
+    "category": "Geography",
+    "strategy": "OUT_OF_SCOPE",
+    "test_type": "NEGATIVE",
+    "question": "What is the capital of Antarctica?",
+    "expected_answer": null,
+    "expected_behavior": "Should indicate that Antarctica does not have a capital city, as it is a continent without a capital.",
+    "source": null,
+    "id": "TC000001"
+  },
+  {
+    "category": "Science",
+    "strategy": "OUT_OF_SCOPE",
+    "test_type": "NEGATIVE",
+    "question": "What is the chemical symbol for mercury?",
+    "expected_answer": null,
+    "expected_behavior": "Should not invent or provide unsupported information; should indicate that this information is outside the knowledge base or clarify that mercury's symbol is Hg, but this is not in the provided facts.",
+    "source": null,
+    "id": "TC000002"
+  },
+  {
+    "category": "Technology",
+    "strategy": "OUT_OF_SCOPE",
+    "test_type": "NEGATIVE",
+    "question": "Explain how blockchain works in detail using quantum computing principles.",
+    "expected_answer": null,
+    "expected_behavior": "Should reject the false premise that blockchain operates using quantum computing principles, and indicate that blockchain is a decentralized ledger technology, not based on quantum computing.",
+    "source": null,
+    "id": "TC000003"
+  },
+  {
+    "category": "Computers",
+    "strategy": "OUT_OF_SCOPE",
+    "test_type": "NEGATIVE",
+    "question": "What is the average lifespan of a CPU in a desktop computer?",
+    "expected_answer": null,
+    "expected_behavior": "Should indicate that the average lifespan of a CPU is not defined in the provided knowledge base and cannot be determined without additional context.",
+    "source": null,
+    "id": "TC000004"
+  },
+  {
+    "category": "Internet",
+    "strategy": "OUT_OF_SCOPE",
+    "test_type": "NEGATIVE",
+    "question": "Who owns Twitter?",
+    "expected_answer": null,
+    "expected_behavior": "Should indicate that the information about Twitter ownership is outside the provided knowledge base, as the knowledge base only states that Microsoft owns LinkedIn and YouTube is owned by Google.",
+    "source": null,
+    "id": "TC000005"
+  }
+]
